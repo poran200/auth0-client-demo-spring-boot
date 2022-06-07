@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>JaEcap Login</title>
+</head>
+<body>
+<main>
+    <h1>Create user</h1>
+    <form th:object="${fromData}"
+          th:action="@{/api/login}"
+          method="post" >
+        <div>
+            <label for="username">username</label>
+            <input id="username" type="text"
+                   th:field="*{username}">
+        </div>
+        <div>
+            <label for="password">Password </label>
+            <input id="password" type="password"
+                   th:field="*{password}">
+        </div>
+        <div>
+            <label for="loginWithGoogle">Login with Google</label>
+            <input id="loginWithGoogle" type="radio" th:value="true"
+                   th:field="*{loginWithGoogle}">
+        </div>
+        <button type="submit">LogIn</button>
+<!--        <form th:object="${formData}"-->
+<!--              th:action="@{/login}"-->
+<!--              method="post">-->
+
+<!--            <button th:value="true" data-th-field="*{loginWithGoogle}" type="submit">LogIn With Google</button>-->
+<!--        </form>-->
+
+
+    </form>
+</main>
+
+</body>
+</html>
